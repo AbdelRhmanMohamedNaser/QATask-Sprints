@@ -40,7 +40,7 @@ public class TestCase extends TestBase {
 
     }
     @Test(priority = 3)
-    public void AddingItemsToTheCartaaaa() throws InterruptedException {
+    public void CompletingPurchases() throws InterruptedException {
         page = new PageBase(driver);
         product = new ProductPage(driver);
         check = new CheckoutPage(driver);

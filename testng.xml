@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <parameter name="browser" value="firfox"/>
+    <parameter name="browser" value="edge"/>
     <parameter name="URL" value="https://egyptlaptop.com/"/>
     <parameter name="username" value="abdonasr502@gmail.com"/>
     <parameter name="password" value="Abdo123@"/>
@@ -11,7 +11,7 @@
                 <methods>
                     <include name="VerifyusersCanSuccessfullySearchForProducts"/>
                     <include name="AddingItemsToTheCart"/>
-                    <include name="AddingItemsToTheCartaaaa"/>
+                    <include name="CompletingPurchases"/>
                 </methods>
             </class>
         </classes>

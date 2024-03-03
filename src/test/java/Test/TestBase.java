@@ -2,6 +2,7 @@ package Test;
 
 import Pages.HomePage;
 import Pages.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,19 +21,21 @@ public class TestBase {
     public  static WebDriver driver;
     @BeforeSuite
     @Parameters({"browser","URL", "username", "password"})
-    public void setup(@Optional("firfox") String browser,
+    public void setup(@Optional("edge") String browser,
                       @Optional("https://egyptlaptop.com/") String URL,
                       @Optional("abdonasr502@gmail.com") String username,
                       @Optional("Abdo123@") String password)  {
         if(browser.equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
+            //System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
 
         }
-        else if (browser.equalsIgnoreCase("firfox")) {
-            System.setProperty("webdriver.firfox.driver","src/main/resources/geckodriver.exe");
-            driver = new FirefoxDriver();
+        else if (browser.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            //System.setProperty("webdriver.firfox.driver","src/main/resources/geckodriver.exe");
+            driver = new EdgeDriver();
             driver.manage().window().maximize();
 
         }
